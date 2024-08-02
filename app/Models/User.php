@@ -48,10 +48,7 @@ class User extends Authenticatable
     protected function name(): Attribute{
         
         return new Attribute(
-            get: function($value){
-                return ucwords($value);
-            
-            },
+            get: fn($value) => ucwords($value),
             set: function($value){
                 return strtolower($value);
 
